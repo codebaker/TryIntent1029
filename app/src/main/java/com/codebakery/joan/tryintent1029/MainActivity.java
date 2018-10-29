@@ -1,5 +1,6 @@
 package com.codebakery.joan.tryintent1029;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,26 +35,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()){
             case R.id.button_plus:
-                setIntent(num1,num2,OPERATOR_PLUS);
+                startIntent(num1,num2,OPERATOR_PLUS, PlusActivity.class);
                 break;
             case R.id.button_minus:
-                setIntent(num1,num2,OPERATOR_MINUS);
+                startIntent(num1,num2,OPERATOR_MINUS,MinusActivity.class);
                 break;
             case R.id.button_multiplication:
-                setIntent(num1,num2, OPERATOR_MULTI);
+                startIntent(num1,num2, OPERATOR_MULTI,MultiplicationActivity.class);
                 break;
             case R.id.button_division:
-                setIntent(num1,num2, OPERATOR_DIV);
+                startIntent(num1,num2, OPERATOR_DIV,DivisionActivity.class);
                 break;
         }
     }
 
-    private void setIntent(String num1, String num2, int operator){
-        Intent intent = new Intent(this,PlusActivity.class)
+    private void startIntent(String num1, String num2, int operator, Class<?> activity){
+        Intent intent = new Intent(this,activity)
                 .putExtra("num1",num1)
                 .putExtra("num2", num2)
                 .putExtra("operator",operator);
-
         startActivity(intent);
     }
 }
