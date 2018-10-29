@@ -10,18 +10,13 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    public static final int OPERATOR_PLUS = 1;
-    public static final int OPERATOR_MINUS = 2;
-    public static final int OPERATOR_MULTI = 3;
-    public static final int OPERATOR_DIV = 4;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //버튼에 리스너를 단다
-        ((Button)findViewById(R.id.button_plus)).setOnClickListener(this);
+        ((Button) findViewById(R.id.button_plus)).setOnClickListener(this);
         ((Button) findViewById(R.id.button_minus)).setOnClickListener(this);
         ((Button) findViewById(R.id.button_multiplication)).setOnClickListener(this);
         ((Button) findViewById(R.id.button_division)).setOnClickListener(this);
@@ -35,21 +30,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()){
             case R.id.button_plus:
-                startIntent(num1,num2,OPERATOR_PLUS, PlusActivity.class);
+                startIntent(num1,num2,"더하기", PlusActivity.class);
                 break;
             case R.id.button_minus:
-                startIntent(num1,num2,OPERATOR_MINUS,MinusActivity.class);
+                startIntent(num1,num2,"빼기",MinusActivity.class);
                 break;
             case R.id.button_multiplication:
-                startIntent(num1,num2, OPERATOR_MULTI,MultiplicationActivity.class);
+                startIntent(num1,num2, "더하기",MultiplicationActivity.class);
                 break;
             case R.id.button_division:
-                startIntent(num1,num2, OPERATOR_DIV,DivisionActivity.class);
+                startIntent(num1,num2, "나누기",DivisionActivity.class);
                 break;
         }
     }
 
-    private void startIntent(String num1, String num2, int operator, Class<?> activity){
+    private void startIntent(String num1, String num2, String operator, Class<?> activity){
         Intent intent = new Intent(this,activity)
                 .putExtra("num1",num1)
                 .putExtra("num2", num2)

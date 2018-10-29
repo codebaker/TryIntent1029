@@ -19,7 +19,8 @@
         <activity android:name=".PlusActivity" />
         <activity android:name=".MinusActivity" />
         <activity android:name=".DivisionActivity" />
-        <activity android:name=".MultiplicationActivity"></activity>
+        <activity android:name=".MultiplicationActivity" />
+        <activity android:name=".ResultActivity"></activity>
     </application>
 
 </manifest>
