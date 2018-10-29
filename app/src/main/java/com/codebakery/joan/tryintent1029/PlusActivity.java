@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,6 +15,8 @@ public class PlusActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plus);
+
+        ((Button)findViewById(R.id.buttonResult)).setOnClickListener(this);
 
         Intent intent = getIntent();
         String num1 = intent.getStringExtra("num1");
@@ -27,6 +30,8 @@ public class PlusActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-
+        Intent intent = new Intent(this,ResultActivity.class)
+                            .putExtra("result", Integer.toString(result));
+        startActivity(intent);
     }
 }

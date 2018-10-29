@@ -5,19 +5,19 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".PlusActivity">
+    tools:context=".ResultActivity">
 
     <TextView
-        android:id="@+id/textViewResult"
+        android:id="@+id/textViewResult2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/form"
-        android:textSize="24sp" />
+        android:textSize="30sp"
+        tools:text="@string/textViewResult" />
 
     <Button
-        android:id="@+id/buttonResult"
+        android:id="@+id/buttonHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/buttonResult" />
+        android:text="@string/textViewResut" />
 
 </LinearLayout>

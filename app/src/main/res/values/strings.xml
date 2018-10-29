@@ -6,4 +6,7 @@
     <string name="button_division">나누기</string>
     <string name="button_multiplication">곱하기</string>
     <string name="form">연산 공식</string>
+    <string name="buttonResult">결과보기</string>
+    <string name="textViewResut">처음화면</string>
+    <string name="textViewResult">결과</string>
 </resources>
