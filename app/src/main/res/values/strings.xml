@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TryIntent1029</string>
+    <string name="textView_operator">연산자</string>
+    <string name="button_plus">더하기</string>
+    <string name="button_minus">빼기</string>
+    <string name="button_division">나누기</string>
+    <string name="button_multiplication">곱하기</string>
+</resources>
