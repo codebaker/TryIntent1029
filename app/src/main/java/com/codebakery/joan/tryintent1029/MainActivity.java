@@ -1,6 +1,5 @@
 package com.codebakery.joan.tryintent1029;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,10 +44,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void startIntent(String num1, String num2, String operator, Class<?> activity){
-        Intent intent = new Intent(this,activity)
-                .putExtra("num1",num1)
+        Bundle bundle = new Bundle();
+        bundle.putInt("num1",Integer.parseInt(num1));
+        bundle.putInt("num2",Integer.parseInt(num2));
+
+        Intent intent = new Intent(this,activity).putExtras(bundle);
+        /*        .putExtra("num1",num1)
                 .putExtra("num2", num2)
-                .putExtra("operator",operator);
+                .putExtra("operator",operator);*/
         startActivity(intent);
     }
 }

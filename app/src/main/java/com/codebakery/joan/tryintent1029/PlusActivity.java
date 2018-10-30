@@ -18,13 +18,13 @@ public class PlusActivity extends AppCompatActivity implements View.OnClickListe
 
         ((Button)findViewById(R.id.buttonResult)).setOnClickListener(this);
 
-        Intent intent = getIntent();
-        String num1 = intent.getStringExtra("num1");
-        String num2 = intent.getStringExtra("num2");
-        String operator = intent.getStringExtra("operator");
-        result = Integer.parseInt(num1) + Integer.parseInt(num2);
+        Bundle bundle = getIntent().getExtras();
+        int num1 = bundle.getInt("num1",0);
+        int num2 = bundle.getInt("num2",0);
+        //String operator = intent.getStringExtra("operator");
+        result = num1 + num2;
 
-        ((TextView) findViewById(R.id.textViewResult)).setText(num1 +" " + operator + " " + num2);
+        ((TextView) findViewById(R.id.textViewResult)).setText(num1 +" 더하기 " + num2);
 
     }
 
